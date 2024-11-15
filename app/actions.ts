@@ -23,6 +23,10 @@ export const signUpAction = async (formData: FormData) => {
     email,
     password,
     options: {
+      data: {
+        first_name: formData.get("firstName")?.toString(),
+        last_name: formData.get("lastName")?.toString()
+      },
       emailRedirectTo: `${origin}/auth/callback`,
     },
   });
